@@ -1,0 +1,59 @@
+{
+    "editor.rulers": [
+        120
+    ],
+    "latex-workshop.view.pdf.hand": true,
+    "latex-workshop.view.autoFocus.enabled": false,
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "pdflatex incremental",
+            "tools": [
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "pdflatex full",
+            "tools": [
+                "pdflatex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "--halt-on-error",
+                "--shell-escape",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.viewer.pdf.internal.port": 41491,
+    "spellright.documentTypes": [
+        "dsdl",
+        "markdown",
+        "latex",
+        "plaintext"
+    ],
+    "spellright.ignoreFiles": [
+        "**/.gitignore",
+        "**/.spellignore"
+    ],
+    "spellright.language": [
+        "en_US"
+    ]
+}

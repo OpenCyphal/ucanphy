@@ -1,0 +1,57 @@
+\chapter{CAN bus physical layer}\label{sec:phy}
+
+As can be seen from its specification, UAVCAN is mostly agnostic of the parameters of the physical layer.
+Despite that, vendors should follow the recommendations provided in this section
+in the interest of maximizing the cross-vendor compatibility.
+
+\section{Classic CAN}
+
+Table~\ref{table:phy_parameters_classic_can} lists the recommended parameters of the
+ISO 11898-2 Classic CAN physical layer.
+The estimated bus length limits are based on the assumption that the propagation delay does not exceed 5 ns/m,
+not including additional delay times of CAN transceivers and other components.
+
+\begin{UAVCANSimpleTable}[wide]{ISO 11898-2 Classic CAN physical layer parameters}{|l| X[c] X[c] X[c] X[c] |l|}%
+    \label{table:phy_parameters_classic_can}%
+    Parameter                           &           \multicolumn{4}{c|}{Value}          & Unit      \\
+    Bit rate                            &   1000    &   500     &   250     &   125     & kbit/s    \\
+    Permitted sample point location     &   75--90  &   85--90  &   85--90  &   85--90  & \%        \\
+    Recommended sample point location   &   87.5    &   87.5    &   87.5    &   87.5    & \%        \\
+    Maximum bus length                  &   40      &   100     &   250     &   500     & m         \\
+    Maximum stub length                 &   0.3     &   0.3     &   0.3     &   0.3     & m         \\
+\end{UAVCANSimpleTable}
+
+Designers are encouraged to implement CAN auto bit rate detection when applicable.
+Refer to the CiA 801 application note for the recommended practices.
+
+\begin{remark}
+    UAVCAN allows the use of a simple bit time measuring approach,
+    as it is guaranteed that any functioning UAVCAN network will always exchange node status messages,
+    which can be expected to be published at a rate no lower than 1 Hz,
+    and that contain a suitable alternating bit pattern in the CAN ID field.
+    Refer to the UAVCAN Specification for details.
+\end{remark}
+
+\section{CAN FD}
+
+This section is under development and will be populated in a later revision of the document.
+
+\begin{table}[H]
+    \caption{ISO 11898-2 CAN FD physical layer parameters}
+    \NoLeftSkip
+    \begin{tabu} to \textwidth {|l l| X[c] X[c] X[c] X[c] |l|}
+        \hline\rowfont{\bfseries{}}
+        \label{table:phy_parameters_can_fd}%
+        Parameter                           & Segment       & \multicolumn{4}{c|}{Value}& Unit \\\hline
+
+        \multirow{2}{*}{Bit rate}           & Arbitration   & 1000 & 500  & 250  & 125  & \multirow{2}{*}{kbit/s} \\
+                                            & Data          & 4000 & 2000 & 1000 & 500  &                       \\\hline
+        \multirow{2}{*}{Permitted SPL}      & Arbitration   & TBD  & TBD  & TBD  & TBD  & \multirow{2}{*}{\%}   \\
+                                            & Data          & TBD  & TBD  & TBD  & TBD  &                       \\\hline
+        \multirow{2}{*}{Recommended SPL}    & Arbitration   & TBD  & TBD  & TBD  & TBD  & \multirow{2}{*}{\%}   \\
+                                            & Data          & TBD  & TBD  & TBD  & TBD  &                       \\\hline
+        \multicolumn{2}{|l|}{Maximum bus length}            & TBD  & TBD  & TBD  & TBD  & \multirow{2}{*}{m}    \\
+        \multicolumn{2}{|l|}{Maximum stub length}           & TBD  & TBD  & TBD  & TBD  &                       \\\hline
+
+    \end{tabu}
+\end{table}

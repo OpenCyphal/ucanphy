@@ -1,0 +1,87 @@
+% !TEX root
+% Copyright (c) 2021  UAVCAN Consortium <uavcan.org>
+
+\documentclass{uavcandoc}
+
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+\urlstyle{same}
+
+\graphicspath{{fig/}}
+
+\title{UAVCAN/CAN Physical Layer Specification v0.1}
+
+\hbadness=10000
+
+\begin{document}
+\frontmatter
+
+\begin{titlepage}
+
+\section*{Overview}
+
+The UAVCAN/CAN physical layer specification (UCANPHY) defines electromechanical conventions for {UAVCAN/CAN}
+optimized for use in the avionics of manned and unmanned aircraft as well as in high-integrity robotic systems.
+The goal of UCANPHY is to maximize cross-vendor compatibility, ensure consistency across the ecosystem, and
+prevent some common design pitfalls.
+
+UAVCAN is an open technology for real-time intravehicular distributed computing and communication
+based on modern networking standards.
+The name UAVCAN stands for \emph{Uncomplicated Application-level Vehicular Computing And Networking}.
+
+UAVCAN/CAN is a standard transport layer protocol defined by the UAVCAN specification for use with
+the CAN\footnote{Controller Area Network} protocol.
+
+\BeginRightColumn
+
+\section*{License}
+
+This standard open to everyone, and it will always remain this way.
+No authorization or approval of any kind is necessary for its implementation, distribution, or use.
+
+% The following statement looks a bit archaic, but it is the recommended form according to
+% https://creativecommons.org/choose/results-one?license_code=by&amp;jurisdiction=&amp;version=4.0&amp;lang=en
+This work is licensed under the Creative Commons Attribution 4.0 International License.
+To view a copy of this license, visit
+\href{http://creativecommons.org/licenses/by/4.0/}{creativecommons.org/licenses/by/4.0}
+or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+\hspace*{\fill}\includegraphics[height=1.75\baselineskip]{cc-by}\hspace*{\fill}
+
+\section*{Disclaimer of warranty}
+
+Note well: this Specification is provided on an ``as is'' basis, without warranties or conditions of any kind,
+express or implied, including, without limitation, any warranties or conditions of
+title, non-infringement, merchantability, or fitness for a particular purpose.
+
+\section*{Limitation of liability}
+
+In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise,
+unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing,
+shall any author of this Specification be liable for damages,
+including any direct, indirect, special, incidental, or consequential damages of any character arising
+from, out of, or in connection with the Specification or the implementation, deployment,
+or other use of the Specification (including but not limited to damages for loss of goodwill,
+work stoppage, equipment failure or malfunction, injuries to persons, death,
+or any and all other commercial damages or losses),
+even if such author has been made aware of the possibility of such damages.
+
+\end{titlepage}
+
+\tableofcontents
+\BeginRightColumn
+\listoftables
+\listoffigures
+
+\mainmatter
+
+\input{introduction.tex}
+\input{phy.tex}
+\input{connector.tex}
+\input{power.tex}
+
+\end{document}
