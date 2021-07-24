@@ -1,0 +1,25 @@
+name: Main Workflow
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Generate PDF file from LaTeX
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+
+    - name: Run texer container
+      uses: docker://uavcan/texer:ubuntu-18.04
+      with:
+        entrypoint: /bin/bash
+        args: -c "./compile.sh"
+
+    - name: Upload pdf as an artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: UCANPHY Specification
+        path: specification/UCANPHY_Specification.pdf
