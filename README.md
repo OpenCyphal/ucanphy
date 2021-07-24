@@ -1,5 +1,6 @@
 # UAVCAN/CAN Physical Layer Specification (UCANPHY)
 
+[![CI](https://github.com/UAVCAN/ucanphy/actions/workflows/main.yml/badge.svg)](https://github.com/UAVCAN/ucanphy/actions)
 [![Forum](https://img.shields.io/discourse/https/forum.uavcan.org/users.svg)](https://forum.uavcan.org)
 
 The UAVCAN/CAN Physical Layer specification is maintained here.
